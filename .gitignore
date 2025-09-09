@@ -1,0 +1,25 @@
+.DS_Store
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+# comment the next line if you want to track .Rprofile
+.Rprofile
+
+renv/library/
+renv/staging/
+rsconnect/
+
+*.tmp
+*.log
+*.zip
+*.csv
+*.xlsx
+
+data/.Rapp.history
+packages/
+blobs/
+*.ncd
+*.sqlite
+*.db

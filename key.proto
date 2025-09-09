@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+message SpectralData {
+  uint32 reading = 1;
+  uint32 filter_order = 2;
+  uint32 num_bins = 3;
+  uint32 start = 4;
+  float stop = 5;
+  float live_time = 6;
+  float real_time = 7;
+  float avg_current = 8;
+  float ev_per_bin = 11;
+  float escale = 15;
+  bytes spectral_data = 16;
+  string filter_type = 17;
+
+  message Property {
+    string variable = 1;
+    string value = 2;
+  }
+
+  message PropertyArray {
+    repeated Property type = 1;
+  }
+
+  repeated PropertyArray properties = 18;
+}
