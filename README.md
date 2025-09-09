@@ -29,7 +29,7 @@ TropiCal is not affiliated with the original CloudCal maintainers.
 
 ## Citation
 If this tool supports your work, please cite both:
-- TropiCal: TropiCal (version/tag). GitHub: https://github.com/dannilocruz/TropiCal
+- TropiCal: TropiCal v.1.0. GitHub: https://github.com/dannilocruz/TropiCal
 - CloudCal: Drake, B.L. 2018. *CloudCal v3.0*. doi: 10.5281/zenodo.2596154
 
 ## Acknowledgments
