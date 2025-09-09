@@ -59,7 +59,7 @@ shinyUI(
     ),
     
     titlePanel(
-      HTML("TropiCal v1.0<br><small class='text-muted'>A data reduction tool for the Niton XL5 Plus Analyzer</small>"),
+      HTML("TropiCal v1.0<br><small class='text-muted'>A data processing tool for the Niton XL5 Plus Analyzer</small>"),
       windowTitle = "TropiCal"
     ),
     
