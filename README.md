@@ -2,8 +2,8 @@
 *A data-reduction tool for the Thermo Scientific Niton XL5 Plus analyzer*
 
 ## How to use
-- **Website:** https://tropical.danilocruz.earth/
-- **Containers (Docker Hub):** `dannilocruz/tropical`
+- Website: https://tropical.danilocruz.earth/
+- Containers (Docker Hub): dannilocruz/tropical
 
 > Instructions on how to run locally may be added later.
 
