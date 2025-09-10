@@ -1,11 +1,9 @@
 # TropiCal
-*A data processing tool for the Thermo Scientific Niton XL5 Plus analyzer*
+A data processing tool for the Thermo Scientific Niton XL5 Plus analyzer
 
 ## How to use
 - Website: https://tropical.danilocruz.earth/
 - Containers (Docker Hub): dannilocruz/tropical
-
-> Instructions on how to run locally may be added later.
 
 ## What TropiCal does
 - Built-in calibration exports: uses the XL5 analyzer’s built-in calibration to export major elements as oxides (wt%) and trace elements in ppm — ready for geochemical interpretation.
@@ -19,8 +17,8 @@
 - Exports XL5 raw spectra and metadata in a format CloudCal-XL5-fork can open for empirical calibration.
 
 ## Related repositories
-- CloudCal (upstream): https://github.com/leedrake5/CloudCal
-- CloudCal-XL5-fork (fork used to create `.quant` calibrations): https://github.com/dannilocruz/CloudCal-XL5-fork
+- CloudCal: https://github.com/leedrake5/CloudCal
+- CloudCal-XL5-fork: https://github.com/dannilocruz/CloudCal-XL5-fork
 
 ## License
 TropiCal includes components derived from CloudCal (GPL-3.0).  
@@ -29,7 +27,7 @@ TropiCal is not affiliated with the original CloudCal maintainers.
 
 ## Citation
 If this tool supports your work, please cite both:
-- TropiCal: TropiCal v.1.0. GitHub: https://github.com/dannilocruz/TropiCal
+- TropiCal: TropiCal v1.0. GitHub.
 - CloudCal: Drake, B.L. 2018. *CloudCal v3.0*. doi: 10.5281/zenodo.2596154
 
 ## Acknowledgments
