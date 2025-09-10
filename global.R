@@ -19,7 +19,29 @@ library(xrftools)
 source("xrf_functions.R")
 
 Sys.setenv(OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1", BLIS_NUM_THREADS="1")
-cores <- parallel::detectCores(logical = FALSE)
+get_available_cores <- function() {
+  # Try cgroup v2: /sys/fs/cgroup/cpu.max = "<quota> <period>" or "max <period>"
+  p <- "/sys/fs/cgroup/cpu.max"
+  if (file.exists(p)) {
+    line <- tryCatch(readLines(p, warn = FALSE)[1], error = function(e) "")
+    parts <- strsplit(trimws(line), "\\s+")[[1]]
+    if (length(parts) >= 2 && parts[1] != "max") {
+      quota  <- suppressWarnings(as.numeric(parts[1]))
+      period <- suppressWarnings(as.numeric(parts[2]))
+      if (is.finite(quota) && is.finite(period) && period > 0) {
+        n <- floor(quota / period)
+        if (n >= 1) return(n)
+      }
+    }
+  }
+  
+  # Fallback to detectCores (may overreport or be NA)
+  n <- suppressWarnings(tryCatch(parallel::detectCores(logical = FALSE), error = function(e) NA_integer_))
+  if (!is.finite(n) || n < 1) n <- 1L
+  n
+}
+
+cores <- get_available_cores()
 
 build_ncd_wide <- function(db_file) {
   con <- DBI::dbConnect(RSQLite::SQLite(), db_file)

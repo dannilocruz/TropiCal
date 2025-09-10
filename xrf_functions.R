@@ -2,7 +2,29 @@
 # Modifications by Danilo Cruz (2025): adapted for Niton XL5 I/O and TropiCal compatibility.
 # See LICENSE for details.
 
-my.cores <- parallel::detectCores(logical = FALSE)
+get_available_cores <- function() {
+  # Try cgroup v2: /sys/fs/cgroup/cpu.max = "<quota> <period>" or "max <period>"
+  p <- "/sys/fs/cgroup/cpu.max"
+  if (file.exists(p)) {
+    line <- tryCatch(readLines(p, warn = FALSE)[1], error = function(e) "")
+    parts <- strsplit(trimws(line), "\\s+")[[1]]
+    if (length(parts) >= 2 && parts[1] != "max") {
+      quota  <- suppressWarnings(as.numeric(parts[1]))
+      period <- suppressWarnings(as.numeric(parts[2]))
+      if (is.finite(quota) && is.finite(period) && period > 0) {
+        n <- floor(quota / period)
+        if (n >= 1) return(n)
+      }
+    }
+  }
+  
+  # Fallback to detectCores (may overreport or be NA)
+  n <- suppressWarnings(tryCatch(parallel::detectCores(logical = FALSE), error = function(e) NA_integer_))
+  if (!is.finite(n) || n < 1) n <- 1L
+  n
+}
+
+my.cores <- get_available_cores()
 
 standard <- c("Spectrum", "Ca.K.alpha", "Ti.K.alpha", "Fe.K.alpha")
 

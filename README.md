@@ -1,5 +1,5 @@
 # TropiCal
-*A data-reduction tool for the Thermo Scientific Niton XL5 Plus analyzer*
+*A data processing tool for the Thermo Scientific Niton XL5 Plus analyzer*
 
 ## How to use
 - Website: https://tropical.danilocruz.earth/
