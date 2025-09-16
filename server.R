@@ -246,7 +246,7 @@ shinyServer(function(input, output, session) {
           radioButtons(
             "calib_mode", NULL,
             choiceNames = list(
-              HTML("<b>UF default</b><br><small>Use the latest UF calibration. (Only select this if your data is from UF's analyzer.)</small>"),
+              HTML("<b>Default</b><br><small>Use the latest calibration performed at UFL. (Only select this if your data is from UFL's analyzer.)</small>"),
               HTML("<b>Custom file(s)</b><br><small>Use your own .quant files from CloudCal-XL5.</small>")
             ),
             choiceValues = c("uf", "custom"),
