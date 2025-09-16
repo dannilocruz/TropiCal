@@ -1,9 +1,10 @@
 # TropiCal
-A data processing tool for the Thermo Scientific Niton XL5 Plus analyzer
+A data processing tool for the Thermo Scientific™ Niton™ XL5 Plus handheld analyzer.
+Not affiliated with or endorsed by Thermo Fisher Scientific.
 
 ## How to use
 - Website: https://tropical.danilocruz.earth/
-- Containers (Docker Hub): dannilocruz/tropical
+- Containers (Docker Hub): [dannilocruz/tropical](https://hub.docker.com/repository/docker/dannilocruz/tropical/general)
 
 ## What TropiCal does
 - Built-in calibration exports: uses the XL5 analyzer’s built-in calibration to export major elements as oxides (wt%) and trace elements in ppm — ready for geochemical interpretation.
@@ -17,19 +18,20 @@ A data processing tool for the Thermo Scientific Niton XL5 Plus analyzer
 - Exports XL5 raw spectra and metadata in a format CloudCal-XL5-fork can open for empirical calibration.
 
 ## Related repositories
-- CloudCal: https://github.com/leedrake5/CloudCal
 - CloudCal-XL5-fork: https://github.com/dannilocruz/CloudCal-XL5-fork
 
 ## License
-TropiCal includes components derived from CloudCal (GPL-3.0).  
-As distributed here, TropiCal is licensed under GPL-3.0. See `LICENSE` for details.  
-TropiCal is not affiliated with the original CloudCal maintainers.
+- TropiCal includes components derived from [CloudCal](https://github.com/leedrake5/CloudCal) (GPL-3.0).  
+- As distributed here, TropiCal is licensed under GPL-3.0. See `LICENSE` for details.  
 
 ## Citation
 If this tool supports your work, please cite both:
 - TropiCal: TropiCal v1.0. GitHub.
 - CloudCal: Drake, B.L. 2018. *CloudCal v3.0*. doi: 10.5281/zenodo.2596154
 
-## Acknowledgments
-- The CloudCal creators and contributors for the original project.
-- Colleagues and users contributing XL5 datasets and feedback.
+## Disclaimer
+
+- TropiCal is provided “as is” without warranty of any kind, express or implied. It is intended for research and educational use.
+- TropiCal is not affiliated with or endorsed by Thermo Fisher Scientific. *Thermo Scientific™* and *Niton™* are trademarks of Thermo Fisher Scientific and its affiliates, used here for identification only.
+- TropiCal is not affiliated with the original CloudCal maintainers.
+
