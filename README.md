@@ -26,8 +26,8 @@ Not affiliated with or endorsed by Thermo Fisher Scientific.
 
 ## Citation
 If this tool supports your work, please cite both:
-- TropiCal: Cruz, D. J. N. (2025). TropiCal (v1.0). Zenodo. https://doi.org/10.5281/zenodo.17137037
-- CloudCal: Lee Drake. (2019). leedrake5/CloudCal: Neural Networks (v3.0). Zenodo. https://doi.org/10.5281/zenodo.2596154
+- Cruz, D. J. N. (2025). TropiCal (v1.0). Zenodo. https://doi.org/10.5281/zenodo.17137037
+- Lee Drake. (2019). leedrake5/CloudCal: Neural Networks (v3.0). Zenodo. https://doi.org/10.5281/zenodo.2596154
 
 ## Disclaimer
 
