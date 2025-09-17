@@ -234,7 +234,7 @@ shinyServer(function(input, output, session) {
 
       base_top <- tagList(
         p(HTML("<strong>Save raw spectra with metadata?</strong><br>
-         Download it if you plan to use CloudCal-XL5 to perform your own calibratrion.")),
+         Download it if you plan to use CloudCal-XL5 to perform your own calibration.")),
         uiOutput("raw_dl_block")  # renders the button + status
       )
       
