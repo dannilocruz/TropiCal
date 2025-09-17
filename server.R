@@ -452,7 +452,7 @@ shinyServer(function(input, output, session) {
         )
       }
     } else {
-      tags$div(class = "text-muted", "UF default calibration will be used.")
+      tags$div(class = "text-muted", "The default calibration will be used.")
     }
   })
   
