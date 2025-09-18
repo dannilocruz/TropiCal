@@ -260,10 +260,10 @@ shinyServer(function(input, output, session) {
             condition = "input.calib_mode == 'custom'",
             tags$div(
               style = "margin-top: 8px;",
-              fileInput("file_light", "Light filter (.quant)", accept = ".quant"),
               fileInput("file_main",  "Main filter (.quant)",  accept = ".quant"),
               fileInput("file_low",   "Low filter (.quant)",   accept = ".quant"),
-              fileInput("file_high",  "High filter (.quant)",  accept = ".quant")
+              fileInput("file_high",  "High filter (.quant)",  accept = ".quant"),
+              fileInput("file_light", "Light filter (.quant)", accept = ".quant")
             )
           ),
           
