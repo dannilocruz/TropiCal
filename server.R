@@ -343,10 +343,10 @@ shinyServer(function(input, output, session) {
       
       # UF default (any subset is OK)
       paths <- list(
-        main  = file.path("calibration", "mainCalibration3.quant"),
-        low   = file.path("calibration", "lowCalibration3.quant"),
-        high  = file.path("calibration", "highCalibration3.quant"),
-        light = file.path("calibration", "lightCalibration4.quant")
+        main  = file.path("calibration", "mainCalibration4.quant"),
+        low   = file.path("calibration", "lowCalibration4.quant"),
+        high  = file.path("calibration", "highCalibration4.quant"),
+        light = file.path("calibration", "lightCalibration5.quant")
       )
       out <- lapply(paths, function(p) if (file.exists(p)) .load_cal(p) else NULL)
       if (any(!vapply(out, is.null, TRUE))) return(out)
