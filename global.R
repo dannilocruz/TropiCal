@@ -121,7 +121,7 @@ geochem_table <- function(df,
   req_cols <- c("Sample name", "Reading number", "Unit")
   stopifnot(all(req_cols %in% names(df)))
   
-  majors_all <- c("Si","Ti","Al","Fe","Mn","Mg","Ca","K","P")
+  majors_all <- c("Si","Ti","Al","Fe","Mn","Mg","Ca","Na","K","P")
   traces_all <- c("Ag","As","Au","Bi","Cd","Co","Cr","Cu","Hf","Hg","Mo","Nb",
                   "Ni","Pb","Pd","Rb","Re","Sb","Se","Sn","Sr","Ta","Th","U",
                   "V","W","Y","Zn","Zr","Ba","Cl","S")
@@ -132,7 +132,7 @@ geochem_table <- function(df,
   factors <- c(Si = 2.1392, Ti = 1.6681, Al = 1.8895, Fe = fe_factor,
                Mn = 1.2912, Mg = 1.6582, Ca = 1.3992, K = 1.2046, P = 2.2916)
   oxide_names <- c(Si = "SiO2", Ti = "TiO2", Al = "Al2O3", Fe = total_iron,
-                   Mn = "MnO", Mg = "MgO", Ca = "CaO", K = "K2O", P = "P2O5")
+                   Mn = "MnO", Mg = "MgO", Ca = "CaO", Na = "Na2O", K = "K2O", P = "P2O5")
   
   clean_vec <- function(x) {
     x <- suppressWarnings(as.numeric(x))
@@ -579,7 +579,7 @@ rename_dot_spectral <- function(df, keep = c("Spectrum")) {
 }
 
 MAJOR_OXIDES <- c(Si="SiO2",Ti="TiO2",Al="Al2O3",Fe="Fe2O3",Mn="MnO",
-                  Mg="MgO",Ca="CaO",K="K2O",P="P2O5")
+                  Mg="MgO",Ca="CaO", Na="Na2O", K="K2O",P="P2O5")
 
 rename_to_major_oxides <- function(df, keep=c("Spectrum"), oxide_map=MAJOR_OXIDES) {
   new_names <- vapply(names(df), function(col) {
@@ -598,7 +598,7 @@ rename_to_major_oxides <- function(df, keep=c("Spectrum"), oxide_map=MAJOR_OXIDE
 }
 
 reorder_with_oxides_first <- function(df,
-                                      oxide_order=c("SiO2","TiO2","Al2O3","Fe2O3","MnO","MgO","CaO","K2O","P2O5"),
+                                      oxide_order=c("SiO2","TiO2","Al2O3","Fe2O3","MnO","MgO","CaO","Na2O","K2O","P2O5"),
                                       key="Spectrum") {
   nms <- names(df)
   base_of <- function(x) sub(" Error$", "", x, perl=TRUE)
