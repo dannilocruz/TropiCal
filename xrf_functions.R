@@ -230,6 +230,7 @@ readXL5DataHelper <- function(filepath, filename, type="data", gainshiftvalue=0,
   ev_per_bin <- as.numeric(metadata[metadata[, 1] == "ev_per_bin", 2])
   num_bins <- as.numeric(metadata[metadata[, 1] == "num_bins", 2])
   live_time <- as.numeric(metadata[metadata[, 1] == "live_time", 2])
+  escale <- as.numeric(metadata[metadata[, 1] =="escale", 2])
   
   if (type == "metadata") {
     return(data.frame(
@@ -243,7 +244,7 @@ readXL5DataHelper <- function(filepath, filename, type="data", gainshiftvalue=0,
   if (type == "data") {
     spectral_data <- raw_data[(data_start_row + 1):(data_start_row + num_bins), ]
     spectral_data$Bin <- as.numeric(spectral_data[, 1])
-    spectral_data$Intensity <- as.numeric(spectral_data[, 2])
+    spectral_data$Intensity <- as.numeric(spectral_data[, 2]) * escale
     
     if (use_native_calibration) {
       spectral_data$Energy <- spectral_data$Bin * ev_per_bin / 1000
